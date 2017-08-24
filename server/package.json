@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "",
+  "author": "Artem Rosnovskiy",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.4"
