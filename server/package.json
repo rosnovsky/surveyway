@@ -5,10 +5,10 @@
   "main": "index.js",
   "engines": {
     "node": "8.1.1",
-    "npm": "5.0.3"
+    "yarn": "0.27.5"
   },
   "scripts": {
-    "heroku-postbuild": "cd client && npm run build",
+    "heroku-postbuild": "cd client && yarn --production=false && yarn run build",
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
@@ -23,6 +23,7 @@
     "mongoose": "^4.11.8",
     "nodemon": "^1.11.0",
     "passport": "^0.4.0",
-    "passport-google-oauth20": "^1.0.0"
+    "passport-google-oauth20": "^1.0.0",
+    "react-scripts": "^1.0.13"
   }
 }
