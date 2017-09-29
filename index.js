@@ -5,7 +5,7 @@ const bodyBarser = require("body-parser");
 const passport = require("passport");
 
 require("./models/Survey");
-require("./models/User");
+require("./models/user");
 require("./services/passport");
 const keys = require("./config/keys");
 
