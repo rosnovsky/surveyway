@@ -28,7 +28,7 @@ class Header extends Component {
           <Link 
           to={this.props.auth ? "/surveys" : "/"} 
           className="left brand-logo" style={{ marginLeft: "0.425em" }}
-          >Emaily App</Link>
+          >The Survey Way</Link>
           <ul id="nav-mobile" className="right">
             {this.renderContent()}
           </ul>

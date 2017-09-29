@@ -4,7 +4,8 @@ const cookieSession = require("cookie-session");
 const bodyBarser = require("body-parser");
 const passport = require("passport");
 
-require("./models/user");
+require("./models/User");
+require("./models/Survey");
 require("./services/passport");
 const keys = require("./config/keys");
 
@@ -24,6 +25,7 @@ app.use(passport.session());
 
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 console.log(`We are in ${process.env.NODE_ENV} env. Secret key is: ${process.env.STRIPE_SECRET_KEY}`)
 

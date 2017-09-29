@@ -1,7 +1,7 @@
 {
-  "name": "emaily-app",
+  "name": "the-survey-way-app",
   "version": "1.0.0",
-  "description": "An Email Survey App",
+  "description": "The Survey Way app",
   "main": "index.js",
   "engines": {
     "node": "8.1.1",
@@ -26,6 +26,7 @@
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
     "react-scripts": "^1.0.13",
+    "sendgrid": "^5.2.3",
     "stripe": "^5.1.0"
   }
 }
