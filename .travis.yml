@@ -1,7 +1,6 @@
 {
   "language": "node_js",
   "node_js": "8.1.1",
-  "script": "yarn heroku-postbuild",
-  "group": "stable",
-  "dist": "precise"
+  "script": "npm heroku-postbuild",
+  "group": "stable"
 }
