@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect} from 'react-redux';
 
 class Landing extends Component {
   renderContent() {
-    switch(this.props.auth){
+    switch(this.props.auth) {
       case null:
         return;
       case false:
@@ -23,10 +24,17 @@ class Landing extends Component {
       <div style={{ textAlign: "center"}}>
         <h1>The Survey Way</h1>
         <h5>Send out surveys, fast</h5>
-        {this.renderContent()}
+        <div>{this.renderContent()}
+        </div>
       </div>
     )
   }
 }
 
-export default Landing;
+function mapStateToProps({ auth }) {
+  return { 
+    auth
+  }
+}
+
+export default connect(mapStateToProps)(Landing);

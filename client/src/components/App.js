@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 import Header from "./Header";
 import Landing from "./Landing";
 import * as actions from '../actions';
-
-const Dashboard = () => <h2>Dashboard</h2>;
-const SurveyNew = () => <h2>SurveyNew</h2>;
+import Surveys from "./Surveys";
+import SurveyNew from "./surveys/SurveyNew";
 
 
 
@@ -20,16 +19,29 @@ class App extends Component {
       return (
         <div className="container">
           <BrowserRouter>
+            
             <div>
+             
               <Header />  
+            
               <Route path="/" exact component={Landing} />
-              <Route path="/surveys" exact component={Dashboard} />
-              <Route path="/surveys/new" component={SurveyNew} />
+            
+              <Route path="/surveys" exact component={this.props.auth ? Surveys : Landing } />
+            
+              <Route path="/surveys/new" component={this.props.auth ? SurveyNew : Landing } />
+            
             </div>
+
           </BrowserRouter>
         </div>
       );
     }
 };
 
-export default connect(null, actions)(App);
+function mapStateToProps({ auth }) {
+  return { 
+    auth
+  }
+}
+
+export default connect(mapStateToProps, actions)(App);

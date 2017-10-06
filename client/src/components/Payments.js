@@ -7,14 +7,14 @@ class Payments extends Component {
   render() {
     return(
       <StripeCheckout 
-      name="Emaily App" // the pop-in header title
+      name="The Survey Way" // the pop-in header title
       description="Send out 5 surveys, fast"
       image="/morda_square.jpeg"
       ComponentClass="div"
-      panelLabel="Buy Survey Credits"
+      panelLabel="Buy 5 Survey Credits"
       currency="USD"
-      amount = {500}
-      email="artem@rosnovsky.us"
+      amount = {2500}
+      email="billing@thesurveyway.com"
       billingAddress={true}
       zipCode={true}
       bitcoin
@@ -22,7 +22,7 @@ class Payments extends Component {
       stripeKey = { process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY }
       >
         <button className="btn btn-primary">
-          Buy Credits with Stripe
+        <span role="img" aria-label="Closed Lock">🔒</span> Buy Credits
         </button>
       </StripeCheckout>
     );
