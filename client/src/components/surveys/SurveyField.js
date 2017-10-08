@@ -1,12 +1,13 @@
 import React from 'react';
 
-// Logic to render a single field
+// Logic for rendering a single form field
 
-export default ({input, label, placeholder }) => {
+export default ({input, label, placeholder, meta: { error, touched} }) => {
   return (
     <div>
       <label>{label}</label>
-      <input {...input} placeholder={placeholder} /> 
+      <p className="error">{touched && error}</p>
+      <input {...input} placeholder={placeholder} />
     </div>
   );
 };
