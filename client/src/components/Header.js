@@ -29,7 +29,7 @@ class Header extends Component {
           to={this.props.auth ? "/surveys" : "/"} 
           className="left brand-logo" style={{ marginLeft: "0.425em" }}
           >The Survey Way</Link>
-          <ul id="nav-mobile" className="right">
+          <ul id="nav-desktop" className="right">
             {this.renderContent()}
           </ul>
         </div>
