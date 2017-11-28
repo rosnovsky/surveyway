@@ -123,7 +123,7 @@ module.exports = (survey) => {
                   <tr>
                       <td align="center" valign="top" style="padding: 15px 0;" class="logo">
                           <a href="http://thesurveyway.com" target="_blank">
-                              <img alt="Logo" src="logo-2.jpg" width="60" height="60" style="display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0">The Survey Way
+                              <img alt="Logo" src="http://thesurveyway.com/morda_square.jpeg" width="60" height="60" style="display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0">The Survey Way
                           </a>
                       </td>
                   </tr>
@@ -148,7 +148,7 @@ module.exports = (survey) => {
                                       <!-- COPY -->
                                       <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                           <tr>
-                                              <td align="center" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding-top: 30px;" class="padding">Our Greatest Feature Ever</td>
+                                              <td align="center" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding-top: 30px;" class="padding">Your Feedback is Invaluable</td>
                                           </tr>
                                           <tr>
                                               <td align="center" style="padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding">${survey.body}
@@ -164,7 +164,8 @@ module.exports = (survey) => {
                                               <td align="center" style="padding-top: 25px;" class="padding">
                                                   <table border="0" cellspacing="0" cellpadding="0" class="mobile-button-container">
                                                       <tr>
-                                                          <td align="center" style="border-radius: 3px;" bgcolor="#256F9C"><a href="<a href=${keys.redirectDomain}/api/dashboard/thanks" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #256F9C; display: inline-block;" class="mobile-button">YES &rarr;</a></td>
+                                                          <td align="center" style="border-radius: 3px;" bgcolor="#256F9C"><a href="${keys.redirectDomain}/api/surveys/thanks' target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #256F9C; display: inline-block;" class="mobile-button">YES &rarr;</a></td>&nbsp;
+                                                          <td align="center" style="border-radius: 3px;" bgcolor="#256F9C"><a href='${keys.redirectDomain}/api/surveys/thanks' target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #256F9C; display: inline-block;" class="mobile-button">NO &rarr;</a></td>
                                                       </tr>
                                                   </table>
                                               </td>
