@@ -1,15 +1,15 @@
-const sendgrid = require('sendgrid');
+const sendgrid = require("sendgrid");
 const helper = sendgrid.mail;
-const keys = require('../config/keys');
+const keys = require("../config/keys");
 
 class Mailer extends helper.Mail {
-  constructor({ subject, recipients}, content) {
+  constructor({ subject, recipients }, content) {
     super();
-    
+
     this.sgApi = sendgrid(keys.sendgridKey);
-    this.from_email = new helper.Email('surveys@thesurveyway.com');
-    this.subject = subject; 
-    this.body = new helper.Content('text/html', content);
+    this.from_email = new helper.Email("surveys@thesurveyway.com");
+    this.subject = subject;
+    this.body = new helper.Content("text/html", content);
     this.recipients = this.formatAddresses(recipients);
 
     this.addContent(this.body);
@@ -31,11 +31,11 @@ class Mailer extends helper.Mail {
     this.addTrackingSettings(trackingSettings);
   }
 
-  addRecipients(){
+  addRecipients() {
     const personalize = new helper.Personalization();
     this.recipients.forEach(recipient => {
       personalize.addTo(recipient);
-    })
+    });
     this.addPersonalization(personalize);
   }
 
@@ -49,13 +49,13 @@ class Mailer extends helper.Mail {
     const response = await this.sgApi.API(request, (error, response) => {
       if (error) {
         console.log("Secret key for SendGrid:" + keys.sendgridKey);
-      console.log('Error response received');
+        console.log("Error response received");
       }
       console.log(response.statusCode);
       console.log(response.body);
       console.log(response.headers);
-      })
-      return response;
+    });
+    return response;
   }
 }
 

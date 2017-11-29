@@ -1,24 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import reducers from './reducers';
-import 'materialize-css/dist/css/materialize.min.css';
-import reduxThunk from 'redux-thunk';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import reducers from "./reducers";
+import "materialize-css/dist/css/materialize.min.css";
+import reduxThunk from "redux-thunk";
 
-import App from './components/App';
-//Temp, testing
-import axios from 'axios';
-window.axios = axios
+import App from "./components/App";
 
-
-
-
-
-const store = createStore(reducers, {}, applyMiddleware(reduxThunk))
+const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
-  <Provider store={store} > 
+  <Provider store={store}>
     <App />
-  </Provider>, 
-  document.querySelector("#root"));
+  </Provider>,
+  document.querySelector("#root")
+);
