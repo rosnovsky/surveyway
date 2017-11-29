@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 // Logic for rendering a single form field
 
-export default ({input, label, placeholder, meta: { error, touched} }) => {
+export default ({ input, label, placeholder, meta: { error, touched } }) => {
   return (
     <div>
       <label>{label}</label>
