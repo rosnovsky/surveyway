@@ -3,23 +3,31 @@ import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import SurveyField from "./SurveyField";
 import { Link } from "react-router-dom";
+import validateEmails from "../../utils/validateEmails";
 
 const FIELDS = [
   {
     label: "Survey Title",
     name: "title",
-    placeholder: "Give your survey a name"
+    placeholder: "Give your survey a name",
+    noValueError: "Each survey requires a title."
   },
   {
     label: "Email Subject",
     name: "subject",
-    placeholder: "Survey Email Subject"
+    placeholder: "Survey Email Subject",
+    noValueError: "A subject is a must here."
   },
-  { label: "Survey Body", name: "body", placeholder: "Content of your survey" },
+  { 
+    label: "Survey Body", 
+    name: "body", 
+    placeholder: "Yes or No question for your recipients to answer",
+    noValueError: "There\'s no survey without a message body." },
   {
     label: "Recipients",
-    name: "recipients",
-    placeholder: "A list of emails of survey recipients"
+    name: "emails",
+    placeholder: "A list of emails of survey recipients",
+    noValueError: "At least one recipient is required."
   }
 ];
 
@@ -67,10 +75,13 @@ class SurveyForm extends Component {
 function validate(values) {
   const errors = {};
 
-  if (!values.title) {
-    errors.title = "You must provide a title";
-  }
+  errors.emails = validateEmails(values.emails || "");
 
+  _.each(FIELDS, ({ name, noValueError }) => {
+    if(!values[name]) {
+      errors[name] = noValueError;  
+    }
+  });
   return errors;
 }
 
