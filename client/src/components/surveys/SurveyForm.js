@@ -4,36 +4,11 @@ import { reduxForm, Field } from "redux-form";
 import SurveyField from "./SurveyField";
 import { Link } from "react-router-dom";
 import validateEmails from "../../utils/validateEmails";
-
-const FIELDS = [
-  {
-    label: "Survey Title",
-    name: "title",
-    placeholder: "Give your survey a name",
-    noValueError: "Each survey requires a title."
-  },
-  {
-    label: "Email Subject",
-    name: "subject",
-    placeholder: "Survey Email Subject",
-    noValueError: "A subject is a must here."
-  },
-  { 
-    label: "Survey Body", 
-    name: "body", 
-    placeholder: "Yes or No question for your recipients to answer",
-    noValueError: "There\'s no survey without a message body." },
-  {
-    label: "Recipients",
-    name: "emails",
-    placeholder: "A list of emails of survey recipients",
-    noValueError: "At least one recipient is required."
-  }
-];
+import formFields from "./formFields";
 
 class SurveyForm extends Component {
   renderFields() {
-    return _.map(FIELDS, ({ label, name, placeholder }) => {
+    return _.map(formFields, ({ label, name, placeholder }) => {
       return (
         <Field
           key={name}
@@ -51,7 +26,7 @@ class SurveyForm extends Component {
     return (
       <div>
         <h3>Create New Survey</h3>
-        <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
+        <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
           {this.renderFields()}
 
           <button
@@ -77,9 +52,9 @@ function validate(values) {
 
   errors.emails = validateEmails(values.emails || "");
 
-  _.each(FIELDS, ({ name, noValueError }) => {
-    if(!values[name]) {
-      errors[name] = noValueError;  
+  _.each(formFields, ({ name, noValueError }) => {
+    if (!values[name]) {
+      errors[name] = noValueError;
     }
   });
   return errors;
@@ -87,5 +62,6 @@ function validate(values) {
 
 export default reduxForm({
   validate,
-  form: "surveyForm"
+  form: "surveyForm",
+  destroyOnUnmount: false
 })(SurveyForm);
