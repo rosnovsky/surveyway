@@ -19,7 +19,7 @@ export default [
     },
     {
       label: "Recipients",
-      name: "emails",
+      name: "recipients",
       placeholder: "A list of emails of survey recipients",
       noValueError: "At least one recipient is required."
     }

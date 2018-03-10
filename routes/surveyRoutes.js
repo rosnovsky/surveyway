@@ -31,9 +31,10 @@ module.exports = app => {
 
       req.user.credits -= 1;
       const user = await req.user.save();
-
-      req.send(user);
+      console.log(user);
+      res.send(user);
     } catch (err) {
+      console.log(`Err: ${err}`);
       res.status(422).send(err);
     }
   });
