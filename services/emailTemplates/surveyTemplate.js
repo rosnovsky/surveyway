@@ -1,7 +1,9 @@
+// Take a look at this for better copy: http://www.goodemailcopy.com/
+
 const keys = require("../../config/keys");
 
 module.exports = survey => {
-  return `
+    return `
 
   <!DOCTYPE html>
   <html>
