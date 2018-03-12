@@ -8,12 +8,11 @@ class Surveys extends Component {
     return (
       <div>
         <h3>Dashboard</h3>
-        <div>
+        <div className="action-btn">
           <Link
             to={this.props.auth ? "/surveys/new" : "/"}
             className="btn-large waves-effect waves-light red"
-          >
-            <i className="material-icons">add</i>
+          >Create Survey
           </Link>
         </div>
       </div>
